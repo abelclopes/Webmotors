@@ -38,7 +38,7 @@ namespace Webmotors.infra
         }
         private static string RandMarca(int leng = 3)
         {
-            string[] marcaNames = new string[3] { "Ford", "GM", "Toiota" };
+            string[] marcaNames = new string[3] { "Ford", "GM", "Toyota" };
 
             Random rand = new Random(DateTime.Now.Second);
             return marcaNames[rand.Next(0, marcaNames.Length - 1)];
