@@ -41,6 +41,6 @@ ou executar este o script SQL
 
 ### Engenharia reversa 
 
-	dotnet ef dbcontext scaffold "Server=localhost,11433;Database=SistemaCompraDb;User ID=sa;Password=Testing1122;Trusted_Connection=False; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer
+	dotnet ef dbcontext scaffold "Server=localhost,11433;Database=teste_webmotors;User ID=sa;Password=Testing1122;Trusted_Connection=False; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer
 
 
