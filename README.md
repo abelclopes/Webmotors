@@ -4,6 +4,7 @@ Esta api usa o Mediatr que é um padrão de projeto Comportamental criado pelo G
 
 
 ## MediatR
+
 Basicamente temos dois componentes principais chamados de Request e Handler, que implementamos através das interfaces  **_IRequest_**  e  **_IRequestHandler<TRequest>_**  respectivamente.
 
 -   Request → mensagem que será processada.
@@ -13,13 +14,16 @@ Basicamente temos dois componentes principais chamados de Request e Handler, que
 
 veja mais sobre isso em [MediatR](https://github.com/jbogard/MediatR.Extensions.Microsoft.DependencyInjection)
 
+## AutoMapper
+
+O **AutoMapper** é uma biblioteca pequena e simples construída para resolver um problema aparentemente complexo, que é livrar-se de um código que mapeou um objeto para outro. Este tipo de problema é muito comum e relativamente trabalhoso de resolver, a ferramenta **AutoMapper** atua nesse cenário de forma simples e elegante.
+
 
 ## Database Docker-Composer
 usei um SQLServer rodando, deixei o script do docker-compose.yml
 
 
 ## Database Entity Framework
-
 Foi utilizado o Entity Framework Core como mapeador  de banco de dados
 
 para utilizar este sistema deve rodar primeiramente o console
