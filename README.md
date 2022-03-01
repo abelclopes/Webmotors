@@ -30,8 +30,8 @@ para utilizar este sistema deve rodar primeiramente o console
  
 
 	dotnet ef database update
-ou executar este o script SQL
-![enter image description here](https://github.com/abelclopes/Webmotors/blob/develop/Screenshot_3.png?raw=true)
+    ou executar este o script SQL   
+    ![enter image description here](https://github.com/abelclopes/Webmotors/blob/develop/Screenshot_3.png?raw=true)
 
 ### Inicia o migrations
 
