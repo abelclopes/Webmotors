@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Webmotors.Application.Anuncios.Query
 {
-    public class ObterAnunciosViewModel
+    public class ObterAnuncioViewModel
     {
         public int Id { get; set; }
         public string Marca { get; set; }

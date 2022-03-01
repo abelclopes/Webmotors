@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Webmotors.Application.Anuncios.Query
 {
-    public class ObterTodosAnunciosQuery : IRequest<IList<ObterAnuncioViewModel>>
+    public class ObterAnuncioQuery : IRequest<ObterAnuncioViewModel>
     {
         public int Id { get; set; }
-
     }
 }

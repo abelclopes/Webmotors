@@ -26,5 +26,11 @@ namespace Webmotors.Domain.Repository
         }
 
         public async Task<IEnumerable<Anuncio>> ObterAnuncios() =>  await Task.FromResult(_context.Anuncios);
+
+        public async Task<Anuncio> ObterAnuncioById(int id)
+        {
+            var anuncio = await _context.Anuncios.FindAsync(id);
+            return anuncio;
+        }
     }
 }

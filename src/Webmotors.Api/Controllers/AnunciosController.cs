@@ -26,20 +26,28 @@ namespace Webmotors.Repository.Api.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        public Task<IActionResult> Get()
+        public async Task<IActionResult> Get()
         {
             var query = new ObterTodosAnunciosQuery();
-            var AnunciosViewModel =  _mediator.Send(query);
-            return GetResponseAsync(AnunciosViewModel);
+            var AnunciosViewModel = _mediator.Send(query);
+            return await GetResponseAsync<IList<ObterAnuncioViewModel>>(AnunciosViewModel);
         }
 
-        private async Task<IActionResult> GetResponseAsync(Task<IList<ObterAnunciosViewModel>> anunciosViewModel)
+
+        [HttpGet("{id}")]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public async Task<IActionResult> GetById(int id)
         {
-            if (anunciosViewModel.Result is null)
-            {
-                return NotFound();
-            }
-            return Ok(await anunciosViewModel);
+            var query = new ObterAnuncioQuery() { Id = id };
+            var AnunciosViewModel = _mediator.Send(query);
+            return await GetResponseAsync<ObterAnuncioViewModel>(AnunciosViewModel);
         }
+      
+
+
+
     }
 }
