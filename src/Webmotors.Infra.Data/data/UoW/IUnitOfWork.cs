@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Webmotors.infra.data.UoW
+namespace Webmotors.Infra.Data.UoW
 {
     public interface IUnitOfWork : IDisposable
     {

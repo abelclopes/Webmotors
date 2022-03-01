@@ -21,7 +21,7 @@ namespace Webmotors.infra
                     var ano = 2017;
                     var versao = 2017;
                     var quilometragem = 500000;
-                    var observacao = "";
+                    var observacao = "teste observação";
                     var anuncio = new Anuncio(
                         marca,
                         modelo,
@@ -32,6 +32,7 @@ namespace Webmotors.infra
                     );
                     anuncios.Add(anuncio);
                     context.Anuncios.Add(anuncio);
+                    context.SaveChanges();
                 }
             }
         }

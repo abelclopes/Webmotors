@@ -2,36 +2,33 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Webmotors.Api.reverse;
+using Webmotors.infra;
 
 namespace Webmotors.Api.Migrations
 {
-    [DbContext(typeof(teste_webmotorsContext))]
-    [Migration("20220301173319_Init")]
-    partial class Init
+    [DbContext(typeof(WebmotorsAnunciosContext))]
+    partial class WebmotorsAnunciosContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.14")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Webmotors.Api.reverse.TbAnuncioWebmotor", b =>
+            modelBuilder.Entity("Webmotors.Domain.Anuncio", b =>
                 {
-                    b.Property<int>("Ano")
-                        .HasColumnType("int")
-                        .HasColumnName("ano");
-
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("ID")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Ano")
+                        .HasColumnType("int")
+                        .HasColumnName("ano");
 
                     b.Property<string>("Marca")
                         .IsRequired()
@@ -56,12 +53,13 @@ namespace Webmotors.Api.Migrations
                         .HasColumnType("int")
                         .HasColumnName("quilometragem");
 
-                    b.Property<string>("Versao")
-                        .IsRequired()
+                    b.Property<int>("Versao")
                         .HasMaxLength(45)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(45)")
+                        .HasColumnType("int")
                         .HasColumnName("versao");
+
+                    b.HasKey("Id");
 
                     b.ToTable("tb_AnuncioWebmotors");
                 });

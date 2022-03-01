@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Webmotors.Domain.Repository.Abstractions\Webmotors.Domain.Repository.Abstractions.csproj" />
     <ProjectReference Include="..\Webmotors.Domain\Webmotors.Domain.csproj" />
-    <ProjectReference Include="..\Webmotors.infra\Webmotors.infra.Data.csproj" />
-    <ProjectReference Include="..\Webmotors.Repository.Abstractions\Webmotors.Domain.Repository.Abstractions.csproj" />
+    <ProjectReference Include="..\Webmotors.Infra.Data\Webmotors.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

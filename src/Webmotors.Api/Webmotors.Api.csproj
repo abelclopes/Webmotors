@@ -32,10 +32,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Webmotors.CronsCutting\Webmotors.CronsCutting.csproj" />
-    <ProjectReference Include="..\Webmotors.infra\Webmotors.infra.Data.csproj" />
-    <ProjectReference Include="..\Webmotors.Repository\Webmotors.Domain.Repository.csproj" />
-    <ProjectReference Include="..\Webmotors.Repository.Abstractions\Webmotors.Domain.Repository.Abstractions.csproj" />
     <ProjectReference Include="..\Webmotors.Application\Webmotors.Application.csproj" />
+    <ProjectReference Include="..\Webmotors.Domain.Repository.Abstractions\Webmotors.Domain.Repository.Abstractions.csproj" />
+    <ProjectReference Include="..\Webmotors.Domain.Repository\Webmotors.Domain.Repository.csproj" />
     <ProjectReference Include="..\Webmotors.Domain\Webmotors.Domain.csproj" />
 
   </ItemGroup>

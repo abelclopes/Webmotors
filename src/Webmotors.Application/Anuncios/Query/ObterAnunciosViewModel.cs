@@ -8,7 +8,7 @@ namespace Webmotors.Application.Anuncios.Query
 {
     public class ObterAnunciosViewModel
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public int Versao { get; set; }

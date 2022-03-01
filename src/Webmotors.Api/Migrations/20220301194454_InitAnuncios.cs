@@ -2,7 +2,7 @@
 
 namespace Webmotors.Api.Migrations
 {
-    public partial class Init : Migration
+    public partial class InitAnuncios : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,13 +14,14 @@ namespace Webmotors.Api.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     marca = table.Column<string>(type: "varchar(45)", unicode: false, maxLength: 45, nullable: false),
                     modelo = table.Column<string>(type: "varchar(45)", unicode: false, maxLength: 45, nullable: false),
-                    versao = table.Column<string>(type: "varchar(45)", unicode: false, maxLength: 45, nullable: false),
+                    versao = table.Column<int>(type: "int", unicode: false, maxLength: 45, nullable: false),
                     ano = table.Column<int>(type: "int", nullable: false),
                     quilometragem = table.Column<int>(type: "int", nullable: false),
                     observacao = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_tb_AnuncioWebmotors", x => x.ID);
                 });
         }
 

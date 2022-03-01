@@ -10,7 +10,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\Webmotors.Repository.Abstractions\Webmotors.Domain.Repository.Abstractions.csproj" />
+    <ProjectReference Include="..\Webmotors.Domain.Repository.Abstractions\Webmotors.Domain.Repository.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

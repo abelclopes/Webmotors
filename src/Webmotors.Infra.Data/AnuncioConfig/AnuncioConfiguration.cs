@@ -9,7 +9,6 @@ namespace Webmotors.infra.AnuncioConfig
     {
         public void Configure(EntityTypeBuilder<Anuncio> builder)
         {
-            builder.HasNoKey();
 
             builder.ToTable("tb_AnuncioWebmotors");
 

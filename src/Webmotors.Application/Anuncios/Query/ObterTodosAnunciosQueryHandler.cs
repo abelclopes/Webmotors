@@ -23,10 +23,10 @@ namespace Webmotors.Application.Anuncios.Query
 
         public async Task<IList<ObterAnunciosViewModel>> Handle(ObterTodosAnunciosQuery request, CancellationToken cancellationToken)
         {
-            var anuncios = _anunciosRepository.ObterAnuncios();
-            var anuncioViewModel = mapper.Map<IList<ObterAnunciosViewModel>>(anuncios);
+            var anuncios = await _anunciosRepository.ObterAnuncios();
+            var anuncioViewModel = mapper.Map<IEnumerable<ObterAnunciosViewModel>>(anuncios);
 
-            return await Task.FromResult(anuncioViewModel);
+            return anuncioViewModel.ToList();
         }
     }
 }
