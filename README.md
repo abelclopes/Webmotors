@@ -30,8 +30,8 @@ para utilizar este sistema deve rodar primeiramente o console
  
 
 	dotnet ef database update
-ou executar este o script SQL
-![enter image description here](https://github.com/abelclopes/Webmotors/blob/develop/Screenshot_3.png?raw=true)
+    ou executar este o script SQL   
+    ![enter image description here](https://github.com/abelclopes/Webmotors/blob/develop/Screenshot_3.png?raw=true)
 
 ### Inicia o migrations
 
@@ -41,6 +41,6 @@ ou executar este o script SQL
 
 ### Engenharia reversa 
 
-	dotnet ef dbcontext scaffold "Server=localhost,11433;Database=SistemaCompraDb;User ID=sa;Password=Testing1122;Trusted_Connection=False; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer
+	dotnet ef dbcontext scaffold "Server=localhost,11433;Database=teste_webmotors;User ID=sa;Password=Testing1122;Trusted_Connection=False; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer
 
 
