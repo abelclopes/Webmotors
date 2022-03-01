@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CEE74FCD-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{FF5E825E-0631-452A-B543-C2E16D287D2D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webmotors.Application", "src\Webmotors.Application\Webmotors.Application.csproj", "{EBA1835E-F4A1-4FCD-B0B7-790A2EC18AAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{FF5E825E-0631-452A-B543-C2E16D287D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF5E825E-0631-452A-B543-C2E16D287D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF5E825E-0631-452A-B543-C2E16D287D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBA1835E-F4A1-4FCD-B0B7-790A2EC18AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA1835E-F4A1-4FCD-B0B7-790A2EC18AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA1835E-F4A1-4FCD-B0B7-790A2EC18AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA1835E-F4A1-4FCD-B0B7-790A2EC18AAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{2AEE96BC-08E1-4B9B-A41F-464DFB434AA2} = {16941BA6-1597-43C3-B588-1551A4FEC7FC}
 		{DEBA6D2F-4369-4505-9DA4-6A23266E2443} = {DAD6D8EB-255C-4EFB-BBAF-BEF09C21FEB3}
 		{FF5E825E-0631-452A-B543-C2E16D287D2D} = {CEE74FCD-DD03-49B5-8E4B-B06545BC76F2}
+		{EBA1835E-F4A1-4FCD-B0B7-790A2EC18AAD} = {981D3018-645C-4E1D-B61E-0DD7AD7A6317}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {980D6D39-3480-4F2E-AEF7-046554E1241D}

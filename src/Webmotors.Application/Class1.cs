@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Webmotors.Domain
+namespace Webmotors.Application
 {
     public class Class1
     {
