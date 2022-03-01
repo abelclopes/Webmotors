@@ -2,6 +2,7 @@ using ExpectedObjects;
 using System;
 using Tests._Builders;
 using Tests._Util;
+using Webmotors.Domain;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -13,7 +14,6 @@ namespace Tests
     {
         private readonly ITestOutputHelper _output;
 
-        private readonly int _ID;
         private readonly string _Marca;
         private readonly string _Modelo;
         private readonly int _Versao;
@@ -27,9 +27,6 @@ namespace Tests
             _output = output;
             _output.WriteLine("Construtor foi executado");
 
-
-
-            _ID = 1;
             _Marca = "Chevrolet";
             _Modelo = "Cobalt";
             _Versao = 2017;
@@ -66,6 +63,7 @@ namespace Tests
             ).CompareMessage("Modelo é inválido");
         }
 
+
         public void Dispose()
         {
             _output.WriteLine("Dispose sendo executado");
@@ -73,40 +71,5 @@ namespace Tests
 
     }
 
-    public class Anuncio
-    {
-
-        public Anuncio()
-        {
-        }
-        public Anuncio(string marca, string modelo, int versao, int ano, int quilometragem, string observacao)
-        {
-            if (string.IsNullOrEmpty(marca))
-                throw new ArgumentException("Marca é inválido");
-            if (string.IsNullOrEmpty(modelo))
-                throw new ArgumentException("Modelo é inválido");
-            if (versao < 1900)
-                throw new ArgumentException("Versão é inválido");
-            if (ano < 1900)
-                throw new ArgumentException("Ano é inválido");
-            if (string.IsNullOrEmpty(observacao))
-                throw new ArgumentException("Observação é inválido");
-
-            Marca = marca;
-            Modelo = modelo;
-            Versao = versao;
-            Ano = ano;
-            Quilometragem = quilometragem;
-            Observacao = observacao;
-
-        }
-
-        public int ID { get; set; }
-        public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public int Versao { get; set; }
-        public int Ano { get; set; }
-        public int Quilometragem { get; set; }
-        public string Observacao { get; set; }
-    }
+    
 }

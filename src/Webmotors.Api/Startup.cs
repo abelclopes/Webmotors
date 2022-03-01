@@ -1,16 +1,23 @@
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Webmotors.Domain.Interfaces;
+using Webmotors.infra;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.Hosting;
+using AutoMapper;
+using Webmotors.Domain.Repository.Abstractions;
+using Webmotors.Domain.Repository;
 
 namespace Webmotors.Repository.Api
 {
@@ -27,12 +34,30 @@ namespace Webmotors.Repository.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddDbContext<WebmotorsAnunciosContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnectionSqlDocker"),
+                    o => o.MigrationsAssembly("Webmotors.Api"))
+                .EnableSensitiveDataLogging()
+            );
+
+
+            var assembly = AppDomain.CurrentDomain.Load("Webmotors.Application");
+            services.AddMediatR(assembly);
+            services.AddAutoMapper(assembly);
+            services.AddSignalR();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Webmotors Anuncions Api", Version = "v1" });
-                c.SwaggerDoc("v2", new OpenApiInfo { Title = "Webmotors Anuncions Api", Version = "v2" });
             });
+
+            services.AddTransient<IAnunciosRepository, AnunciosRepository>();
+            services.AddTransient<IContext, WebmotorsAnunciosContext>();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +80,14 @@ namespace Webmotors.Repository.Api
             {
                 endpoints.MapControllers();
             });
+
+
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<WebmotorsAnunciosContext>();
+
+                context.Seed();
+            }
         }
     }
 }

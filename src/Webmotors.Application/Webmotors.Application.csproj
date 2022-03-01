@@ -1,7 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Anuncios\Command\AtualizarAnuncio\" />
+    <Folder Include="Anuncios\Command\DeletarAnuncio\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="MediatR" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Webmotors.Domain\Webmotors.Domain.csproj" />
+    <ProjectReference Include="..\Webmotors.infra\Webmotors.infra.Data.csproj" />
+    <ProjectReference Include="..\Webmotors.Repository.Abstractions\Webmotors.Domain.Repository.Abstractions.csproj" />
+  </ItemGroup>
 
 </Project>

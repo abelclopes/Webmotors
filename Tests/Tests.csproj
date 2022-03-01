@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\src\Webmotors.Domain\Webmotors.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
