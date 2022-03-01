@@ -10,5 +10,8 @@ namespace Webmotors.Domain.Repository.Abstractions
         Task<bool> Registrar(Anuncio anuncio);
         Task<IEnumerable<Anuncio>> ObterAnuncios();
         Task<Anuncio> ObterAnuncioById(int id);
+        Task<bool> Atualizar(Anuncio anuncio);
+        Task<Anuncio> Create(Anuncio anuncio);
+        Task Delete(int id);
     }
 }

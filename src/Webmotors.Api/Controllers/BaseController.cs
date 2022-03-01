@@ -17,12 +17,19 @@ namespace Webmotors.Repository.Api.Controllers
         //"creationOptions": 0,
         //"asyncState": null,
         //"isFaulted": false
-        protected async Task<IActionResult> GetResponseAsync<T>(Task<T> _model)
+        protected IActionResult GetResponse<T>(Task<T> _model)
         {
-            var statusCode = (int)_model.Status;
-            if (statusCode == 500) return BadRequest(_model);
+            try
+            {
+                var statusCode = (int)_model.Status;
+                if (statusCode == 500) return BadRequest(_model);
 
-            return Ok(_model.Result);
+                return Ok(_model.Result);
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
     }
 }

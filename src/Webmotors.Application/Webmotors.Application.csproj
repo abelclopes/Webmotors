@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Anuncios\Command\AtualizarAnuncio\" />
-    <Folder Include="Anuncios\Command\DeletarAnuncio\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="MediatR" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
@@ -17,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Webmotors.Domain.Repository.Abstractions\Webmotors.Domain.Repository.Abstractions.csproj" />
+    <ProjectReference Include="..\Webmotors.Domain.Repository\Webmotors.Domain.Repository.csproj" />
     <ProjectReference Include="..\Webmotors.Domain\Webmotors.Domain.csproj" />
     <ProjectReference Include="..\Webmotors.Infra.Data\Webmotors.Infra.Data.csproj" />
   </ItemGroup>

@@ -40,6 +40,17 @@ namespace Webmotors.Domain
         public int Ano { get; set; }
         public int Quilometragem { get; set; }
         public string Observacao { get; set; }
+
+
+
+
+
+        public Anuncio Atualizar(Anuncio anuncio)
+        {
+            var atualizado = new Anuncio(anuncio.Marca,anuncio.Modelo,anuncio.Ano, anuncio.Versao, anuncio.Quilometragem,anuncio.Observacao);
+            atualizado.Id = anuncio.Id;
+            return atualizado;
+        }
     }
 
 }

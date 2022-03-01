@@ -14,7 +14,7 @@ namespace Webmotors.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<Anuncio, ObterAnuncioViewModel>().ReverseMap();
-            CreateMap<ObterAnuncioViewModel, Anuncio > ().ReverseMap();
+            CreateMap<ObterAnuncioViewModel, Anuncio > ().ReverseMap();            
         }
     }
 }

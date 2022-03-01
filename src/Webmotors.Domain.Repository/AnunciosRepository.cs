@@ -32,5 +32,26 @@ namespace Webmotors.Domain.Repository
             var anuncio = await _context.Anuncios.FindAsync(id);
             return anuncio;
         }
+
+        public async Task<bool> Atualizar(Anuncio anuncio)
+        {            
+
+            _context.Anuncios.Update(anuncio);
+            return await _context.SaveChangesAsync() == 1 ? true : false;
+        }
+
+        public async Task<Anuncio> Create(Anuncio anuncio)
+        {
+            await _context.Anuncios.AddAsync(anuncio);
+            await _context.SaveChangesAsync();            
+            return anuncio;
+        }
+
+        public async Task Delete(int id)
+        {
+            var anuncio = await _context.Anuncios.FindAsync(id);
+            _context.Anuncios.Remove(anuncio);
+            await _context.SaveChangesAsync();
+        }
     }
 }
