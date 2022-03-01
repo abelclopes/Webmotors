@@ -9,9 +9,13 @@ namespace Webmotors.Repository.Api.Controllers
     public class BaseController : ControllerBase
     {
 
-        protected IActionResult GetResponse()
-        {
-            throw new NotImplementedException();
-        }
+        //"exception": null,
+        //"status": 5,
+        //"isCanceled": false,
+        //"isCompleted": true,
+        //"isCompletedSuccessfully": true,
+        //"creationOptions": 0,
+        //"asyncState": null,
+        //"isFaulted": false
     }
 }
